@@ -1,4 +1,3 @@
-package at.tugraz.inffeldgroup.dailypic.util;
 
 import android.os.CountDownTimer;
 import android.view.View;
