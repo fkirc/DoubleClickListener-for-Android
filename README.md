@@ -1,9 +1,10 @@
 # DoubleClickListener
-A simple double click listener for written for views implementing OnItemClickListener.
-
+A simple double click listener written for views implementing OnItemClickListener, for example GridViews.
+In contrast to https://gist.github.com/srix55/ec64d2f6a371c80bbbc4 this supports both single and double clicks for the same view.
 
 Usage example:
 
+```java
 GridView myGridView = (GridView)findViewById(R.id.some_id);
 myGridView.setOnItemClickListener(new DoubleClickListener() {
             @Override
@@ -16,3 +17,4 @@ myGridView.setOnItemClickListener(new DoubleClickListener() {
                 // do something when single clicked
             }
         });
+```
