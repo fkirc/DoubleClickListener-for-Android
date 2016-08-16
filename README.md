@@ -1,4 +1,4 @@
-# DoubleClickListener
+# DoubleClickListener for Android
 A simple double click listener written for views implementing OnItemClickListener, for example GridViews.
 In contrast to https://gist.github.com/srix55/ec64d2f6a371c80bbbc4 this supports both single and double clicks for the same view.
 
