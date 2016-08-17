@@ -1,6 +1,8 @@
 # DoubleClickListener for Android
-A simple double click listener for views implementing OnItemClickListener, for example ListViews or GridViews.
-In supports both single and double clicks for the same view, the time delay is adjustable.
+A simple double click listener to implement instagram-like double tap behaviour.
+
+It works for all views implementing OnItemClickListener, for example ListViews or GridViews.
+It supports both single and double clicks for the same view, the time delay is adjustable.
 
 Usage example:
 
