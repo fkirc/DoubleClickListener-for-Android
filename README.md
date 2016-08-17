@@ -10,12 +10,12 @@ Usage example:
 GridView myGridView = (GridView)findViewById(R.id.some_id);
 myGridView.setOnItemClickListener(new DoubleClickListener() {
             @Override
-            public void onDoubleClick(View v, int position) {
+            public void onDoubleClick(AdapterView<?> parent, View v, int position, long id) {
                // do something when double clicked
             }
 
             @Override
-            public void onSingleClick(View v, int position) {
+            public void onSingleClick(AdapterView<?> parent, View v, int position, long id) {
                 // do something when single clicked
             }
         });
