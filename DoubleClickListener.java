@@ -15,7 +15,7 @@ public abstract class DoubleClickListener implements AdapterView.OnItemClickList
         IDLE
     }
 
-    private void startSingleClickTimer(final View v, final int position) {
+    private void startSingleClickTimer(final AdapterView<?> parent, final View v, final int pos, final long id) {
         currentState = State.WAITING_FOR_DOUBLE_CLICK;
         timer = new CountDownTimer(SINGLE_CLICK_DELAY, SINGLE_CLICK_DELAY) {
             @Override
@@ -23,7 +23,7 @@ public abstract class DoubleClickListener implements AdapterView.OnItemClickList
             @Override
             public void onFinish() {
                 startAfterClickTimer();
-                onSingleClick(v, position);
+                onSingleClick(parent, v, pos, id);
             }
         };
         timer.start();
@@ -43,22 +43,22 @@ public abstract class DoubleClickListener implements AdapterView.OnItemClickList
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, final View view, final int position, long id) {
+    public void onItemClick(AdapterView<?> parent, final View v, final int pos, long id) {
 
         switch (currentState) {
             case IDLE:
-                startSingleClickTimer(view, position);
+                startSingleClickTimer(parent, v, pos, id);
                 break;
             case WAITING_FOR_DOUBLE_CLICK:
                 timer.cancel();
                 startAfterClickTimer();
-                onDoubleClick(view, position);
+                onDoubleClick(parent, v, pos, id);
                 break;
             case CLICK_EXECUTED:
                 break; // ignore clicks when an action resulting from a recent click is currently executing
         }
     }
 
-    protected abstract void onSingleClick(View v, int position);
-    protected abstract void onDoubleClick(View v, int position);
+    protected abstract void onSingleClick(AdapterView<?> parent, View v, int position, long id);
+    protected abstract void onDoubleClick(AdapterView<?> parent, View v, int position, long id);
 }
