@@ -1,7 +1,7 @@
 # DoubleClickListener for Android
 
 _______________________________________________________________
-# Note: I recommend to use `android.view.GestureDetector` instead of this class. GestureDetector provides a smoother user experience.
+**Note: I recommend to use `android.view.GestureDetector` instead of this class. GestureDetector provides a smoother user experience.**
 
 A simple double click listener to implement instagram-like double tap behaviour.
 
